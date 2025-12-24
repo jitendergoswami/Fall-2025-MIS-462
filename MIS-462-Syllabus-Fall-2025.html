@@ -13,852 +13,797 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
 
-        .header h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
+        header {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
-        .header .subtitle {
-            color: #7f8c8d;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
 
         .instructor-info {
+            background: #f7fafc;
+            padding: 30px 40px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            border-bottom: 3px solid #667eea;
         }
 
         .info-card {
-            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-            padding: 15px;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .info-card h3 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #4c51bf;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
-        .info-card p {
-            color: #495057;
-            font-weight: 500;
-        }
-
-        .nav-tabs {
+        nav {
+            background: #2d3748;
+            padding: 0;
             display: flex;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
         }
 
-        .tab-button {
-            background: transparent;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #6c757d;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            min-width: fit-content;
-        }
-
-        .tab-button.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .nav-btn {
+            background: #2d3748;
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            border: none;
+            padding: 18px 30px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
         }
 
-        .tab-button:hover:not(.active) {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
+        .nav-btn:hover {
+            background: #4a5568;
+            border-bottom-color: #667eea;
         }
 
-        .tab-content {
+        .nav-btn.active {
+            background: #4c51bf;
+            border-bottom-color: #f6ad55;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
             display: none;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 0.5s;
         }
 
-        .tab-content.active {
+        .section.active {
             display: block;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .assignment-grid {
+        h2 {
+            color: #4c51bf;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px;
+        }
+
+        .objectives-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        .assignment-card {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            position: relative;
+        .objective-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .objective-card:hover {
+            transform: translateX(10px);
+        }
+
+        .assignment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        .assignment-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+        .assignment-table th {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
         }
 
-        .assignment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        .assignment-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .assignment-header {
+        .assignment-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .points-badge {
+            background: #764ba2;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .schedule-week {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .schedule-week:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .week-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
         }
 
-        .assignment-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .assignment-points {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .week-number {
+            background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
             color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 600;
+        }
+
+        .week-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e2e8f0;
         }
 
         .due-date {
-            background: #e74c3c;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            color: #764ba2;
             font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .schedule-table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            text-align: left;
-        }
-
-        .schedule-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e9ecef;
-            transition: background-color 0.3s ease;
-        }
-
-        .schedule-table tr:hover {
-            background-color: rgba(102, 126, 234, 0.05);
-        }
-
-        .schedule-table tr:nth-child(even) {
-            background-color: #f8f9fa;
+            font-size: 0.95em;
         }
 
         .grade-scale {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 15px;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
         .grade-item {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 15px;
             border-radius: 10px;
-            padding: 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .grade-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #667eea;
         }
 
         .grade-letter {
-            font-size: 2rem;
+            font-size: 2em;
             font-weight: 700;
-            color: #667eea;
-            margin-bottom: 5px;
+            color: #4c51bf;
         }
 
         .grade-range {
-            color: #6c757d;
-            font-size: 0.9rem;
+            color: #764ba2;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
 
-        .learning-objectives {
-            list-style: none;
-            padding: 0;
-        }
-
-        .learning-objectives li {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
-            margin: 10px 0;
-            padding: 15px 20px;
+        .highlight-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fadbd8 100%);
+            border-left: 4px solid #f6ad55;
+            padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            margin: 20px 0;
         }
 
-        .learning-objectives li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        .highlight-box strong {
+            color: #c05621;
         }
 
-        .learning-objectives li::before {
-            content: "✓";
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
             color: #667eea;
             font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .textbooks {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .textbook-card {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .textbook-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .textbook-title {
-            color: #2c3e50;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .textbook-details {
-            color: #6c757d;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .policy-section {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e9ecef;
-        }
-
-        .policy-section h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .alert {
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid #e74c3c;
-            background: #fff5f5;
-            color: #c53030;
-        }
-
-        .alert.info {
-            border-left-color: #3182ce;
-            background: #ebf8ff;
-            color: #2b6cb0;
-        }
-
-        .alert.success {
-            border-left-color: #38a169;
-            background: #f0fff4;
-            color: #2f855a;
         }
 
         @media (max-width: 768px) {
-            .nav-tabs {
-                flex-direction: column;
-                gap: 5px;
+            header h1 {
+                font-size: 1.8em;
             }
-            
-            .tab-button {
-                width: 100%;
-                text-align: center;
+
+            .nav-btn {
+                padding: 15px 20px;
+                font-size: 0.9em;
             }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .assignment-grid {
-                grid-template-columns: 1fr;
+
+            .content {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <div class="header">
-            <h1>MIS-462 Fall 2025</h1>
-            <div class="subtitle">Management of Distributed Computing</div>
-            
-            <div class="instructor-info">
-                <div class="info-card">
-                    <h3>Instructor</h3>
-                    <p>Jitender Goswami</p>
-                </div>
-                <div class="info-card">
-                    <h3>Email</h3>
-                    <p>jitender.goswami@metrostate.edu</p>
-                </div>
-                <div class="info-card">
-                    <h3>Phone</h3>
-                    <p>(551) 998-4689</p>
-                </div>
-                <div class="info-card">
-                    <h3>Prerequisites</h3>
-                    <p>MIS 310: Principles of Management Information Systems</p>
-                </div>
+        <header>
+            <h1>MIS-462: Management of Distributed Computing</h1>
+            <p>Spring 2026 | Metropolitan State University</p>
+        </header>
+
+        <div class="instructor-info">
+            <div class="info-card">
+                <h3>👤 Instructor</h3>
+                <p><strong>Jitender Goswami</strong></p>
+                <p>📧 jitender.goswami@metrostate.edu</p>
+                <p>📞 (551) 998-4689</p>
+            </div>
+            <div class="info-card">
+                <h3>🎓 Department</h3>
+                <p><strong>Management Information Systems</strong></p>
+                <p>700 7th Street East</p>
+                <p>Saint Paul, MN 55106-5000</p>
+            </div>
+            <div class="info-card">
+                <h3>📚 Prerequisite</h3>
+                <p><strong>MIS 310:</strong> Principles of Management Information Systems</p>
             </div>
         </div>
 
-        <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-            <button class="tab-button active" onclick="showTab('overview')">Course Overview</button>
-            <button class="tab-button" onclick="showTab('assignments')">Assignments</button>
-            <button class="tab-button" onclick="showTab('schedule')">Schedule</button>
-            <button class="tab-button" onclick="showTab('textbooks')">Textbooks</button>
-            <button class="tab-button" onclick="showTab('grading')">Grading</button>
-            <button class="tab-button" onclick="showTab('policies')">Policies</button>
-        </div>
+        <nav>
+            <button class="nav-btn active" data-section="overview">Overview</button>
+            <button class="nav-btn" data-section="objectives">Learning Objectives</button>
+            <button class="nav-btn" data-section="assignments">Assignments</button>
+            <button class="nav-btn" data-section="schedule">Schedule</button>
+            <button class="nav-btn" data-section="policies">Policies</button>
+            <button class="nav-btn" data-section="resources">Resources</button>
+        </nav>
 
-        <!-- Tab Contents -->
-        
-        <!-- Overview Tab -->
-        <div id="overview" class="tab-content active">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Course Overview</h2>
-            
-            <div class="alert info">
-                <strong>Course Description:</strong> Managers need to know how to manage diverse distributed computing environments and leverage the opportunities these architectures provide. This course covers client/server and N-Tier service oriented architectures, Internet, intranet/extranet, groupware, mobile, cloud and other technologies.
-            </div>
-
-            <h3 style="color: #2c3e50; margin: 30px 0 15px 0;">Learning Objectives</h3>
-            <ul class="learning-objectives">
-                <li>Describe the concept of Information and distributed system</li>
-                <li>Understand the issues unique to a distributed/service oriented architecture</li>
-                <li>Discuss trends in distributed systems architecture</li>
-                <li>Explain and implement concepts of Web Services, Service Oriented Architecture</li>
-                <li>Explain concepts of cloud computing</li>
-                <li>Explain and implement principles of managing change issues while working on modernization projects</li>
-            </ul>
-
-            <h3 style="color: #2c3e50; margin: 30px 0 15px 0;">Regular and Substantive Interaction</h3>
-            <div class="policy-section">
-                <p><strong>Scheduled interactions include:</strong></p>
-                <ul>
-                    <li>3 check-in zoom/teams meetings</li>
-                </ul>
+        <div class="content">
+            <section id="overview" class="section active">
+                <h2>📖 Course Overview</h2>
+                <p>Managers need to know how to manage diverse distributed computing environments and leverage the opportunities these architectures provide. This course explores integration of data, users, graphics, and telephony through client/server and N-Tier service-oriented architectures, Internet, intranet/extranet, groupware, mobile, cloud, and other technologies.</p>
                 
-                <p><strong>Substantive interactions include:</strong></p>
+                <h3>What You'll Learn</h3>
+                <p>This elective course reviews state-of-the-art technologies in software and hardware arenas while emphasizing management models and higher-level analysis. You'll complete practical projects that provide real-world opportunities to use tools that enhance work and build productivity.</p>
+
+                <h3>📕 Required Textbook</h3>
+                <div class="info-card">
+                    <p><strong>Web Services, Service-Oriented Architectures, and Cloud Computing</strong></p>
+                    <p>By Douglas K. Barry | 2nd Edition (2013)</p>
+                    <p>Publisher: Elsevier | ISBN: 9780123983572</p>
+                    <p style="margin-top: 15px; color: #764ba2;"><strong>📦 First Day® Inclusive Access:</strong> Digital materials available through D2L at a discounted price. Charged as a course fee after the drop date.</p>
+                </div>
+            </section>
+
+            <section id="objectives" class="section">
+                <h2>🎯 Learning Objectives</h2>
+                <p><strong>Competence Statement:</strong> Knows the basic principles of distributed computing, the process of systems development and structured methodologies, and understands the system life cycle. Can perform required functions at an introductory level.</p>
+                
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <h3>🌐 Distributed Systems</h3>
+                        <p>Describe the concept of information and distributed systems, understanding unique architectural challenges.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h3>📊 Architecture Trends</h3>
+                        <p>Discuss trends in distributed systems architecture and service-oriented design patterns.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h3>☁️ Web Services & SOA</h3>
+                        <p>Explain and implement concepts of Web Services and Service Oriented Architecture.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h3>🔧 Cloud Computing</h3>
+                        <p>Explain principles of cloud computing and modern distributed architectures.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h3>🔄 Change Management</h3>
+                        <p>Implement principles of managing change in modernization projects.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h3>🤖 AI Applications</h3>
+                        <p>Understand AI in business applications and its implications for distributed systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="assignments" class="section">
+                <h2>📝 Assignments & Grading</h2>
+                
+                <table class="assignment-table">
+                    <thead>
+                        <tr>
+                            <th>Assignment</th>
+                            <th>Points</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quiz 1 (Syllabus)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Jan 26 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz 2 (Distributed Systems)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Feb 16 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Case Study Presentation</td>
+                            <td><span class="points-badge">30</span></td>
+                            <td>Monday, Feb 23 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz 3 (Chapters 1-4)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Mar 16 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz 4 (Chapters 5-7)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Mar 30 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz 5 (Chapters 8-10)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Apr 06 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz 6 (Chapters 11-14)</td>
+                            <td><span class="points-badge">5</span></td>
+                            <td>Monday, Apr 20 by 11:59 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Final Project Presentation</td>
+                            <td><span class="points-badge">40</span></td>
+                            <td>Monday, Apr 27 by 11:59 pm</td>
+                        </tr>
+                        <tr style="background: #667eea; color: white; font-weight: bold;">
+                            <td>TOTAL</td>
+                            <td colspan="2"><span class="points-badge" style="background: #f6ad55;">100</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📊 Grading Scale</h3>
+                <div class="grade-scale">
+                    <div class="grade-item">
+                        <div class="grade-letter">A</div>
+                        <div class="grade-range">93-100%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">B+</div>
+                        <div class="grade-range">87-89%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">B</div>
+                        <div class="grade-range">83-86%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">B-</div>
+                        <div class="grade-range">80-82%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">C+</div>
+                        <div class="grade-range">77-79%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">C</div>
+                        <div class="grade-range">73-76%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">C-</div>
+                        <div class="grade-range">70-72%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">D+</div>
+                        <div class="grade-range">67-69%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">D</div>
+                        <div class="grade-range">63-66%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">D-</div>
+                        <div class="grade-range">60-62%</div>
+                    </div>
+                    <div class="grade-item">
+                        <div class="grade-letter">F</div>
+                        <div class="grade-range">0-59%</div>
+                    </div>
+                </div>
+
+                <h3>🎤 Case Study Presentation (30 points)</h3>
+                <p>Identify and define a business problem, propose technical solutions, and make a recommendation. Maximum 15 minutes with voice recording.</p>
                 <ul>
-                    <li>Course announcements</li>
-                    <li>Email responses within 48 hours</li>
-                    <li>3-4 scheduled office hours</li>
+                    <li>Problem Statement & Overview: 25%</li>
+                    <li>Depth of Knowledge/Creativity: 25%</li>
+                    <li>Presentation Skills: 25%</li>
+                    <li>Participation & Timeliness: 25%</li>
                 </ul>
-            </div>
-        </div>
 
-        <!-- Assignments Tab -->
-        <div id="assignments" class="tab-content">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Course Assignments</h2>
-            
-            <div class="assignment-grid">
-                <div class="assignment-card">
-                    <div class="assignment-header">
-                        <div class="assignment-title">First-Week Participation</div>
-                        <div class="assignment-points">10%</div>
-                    </div>
-                    <p>Answer introduction questions, list assignments, and identify highest-point assignment based on syllabus.</p>
-                    <div class="due-date">Due: Saturday, August 30 by 11:59 pm</div>
-                </div>
-
-                <div class="assignment-card">
-                    <div class="assignment-header">
-                        <div class="assignment-title">Case Study Presentation</div>
-                        <div class="assignment-points">30%</div>
-                    </div>
-                    <p>Individual presentation identifying a business problem and proposing technical solutions. 15-minute presentation with voice recording.</p>
-                    <div class="due-date">Due: Monday, October 20 by 11:59 PM</div>
-                </div>
-
-                <div class="assignment-card">
-                    <div class="assignment-header">
-                        <div class="assignment-title">Quiz</div>
-                        <div class="assignment-points">20%</div>
-                    </div>
-                    <p>Multiple choice and true/false questions based on assigned readings. Approximately 20 questions total.</p>
-                    <div class="due-date">Due: Monday, November 17 by 11:59 PM</div>
-                </div>
-
-                <div class="assignment-card">
-                    <div class="assignment-header">
-                        <div class="assignment-title">Final Project Presentation</div>
-                        <div class="assignment-points">40%</div>
-                    </div>
-                    <p>Individual/group project focused on implementing Web Services and SOA. Includes PowerPoint presentation with voice recording.</p>
-                    <div class="due-date">Due: Monday, December 08 by 11:59 PM</div>
-                </div>
-            </div>
-
-            <div class="alert success">
-                <strong>Important:</strong> All assignments are due by December 8, 2025. Upload documents to the appropriate drop box before the due date.
-            </div>
-        </div>
-
-        <!-- Schedule Tab -->
-        <div id="schedule" class="tab-content">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Course Schedule</h2>
-            
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Week</th>
-                        <th>Topic</th>
-                        <th>Due Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>Readings: Ch. 1 & 2 (Web Services Guide)<br><strong>First-week participation</strong></td>
-                        <td>Saturday, August 30 by 11:59 pm </td>
-                    </tr>
-                    <tr>
-                        <td><strong>2</strong></td>
-                        <td>Labor Day holiday</td>
-                        <td>Monday, September 01</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3</strong></td>
-                        <td>Readings: Ch.5 (Introduction to Information Systems)</td>
-                        <td>Monday, September 08</td>
-                    </tr>
-                    <tr>
-                        <td><strong>4</strong></td>
-                        <td>Readings: Ch 3 & 4 (Web Services Guide)</td>
-                        <td>Monday, September 15</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5</strong></td>
-                        <td>Readings: Ch.6 and 7 (Introduction to Information Systems)</td>
-                        <td>Monday, September 22</td>
-                    </tr>
-                    <tr>
-                        <td><strong>6</strong></td>
-                        <td>Readings: Ch. 5, 6 and 7 (Web Services Guide)</td>
-                        <td>Monday, September 29</td>
-                    </tr>
-                    <tr>
-                        <td><strong>7</strong></td>
-                        <td>Readings: Ch.8 and 9 (Introduction to Information Systems)</td>
-                        <td>Monday, October 6</td>
-                    </tr>
-                    <tr>
-                        <td><strong>8</strong></td>
-                        <td>Readings: Ch. 8 and 9 (Web Services Guide)</td>
-                        <td>Monday, October 13</td>
-                    </tr>
-                    <tr>
-                        <td><strong>9</strong></td>
-                        <td><strong>Case Study Presentations</strong></td>
-                        <td><strong>Monday, October 20</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>10</strong></td>
-                        <td>Readings: Ch. 14 (Introduction to Information Systems)</td>
-                        <td>Monday, Oct 27</td>
-                    </tr>
-                    <tr>
-                        <td><strong>11</strong></td>
-                        <td>Readings: Ch. 10, 11 & 12 (Web Services Guide)</td>
-                        <td>Monday, November 3</td>
-                    </tr>
-                    <tr>
-                        <td><strong>12</strong></td>
-                        <td>Readings: Ch. 13 (Web Services Guide)</td>
-                        <td>Monday, November 10</td>
-                    </tr>
-                    <tr>
-                        <td><strong>13</strong></td>
-                        <td><strong>Quiz</strong></td>
-                        <td><strong>Monday, November 17</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>14</strong></td>
-                        <td>Thanksgiving Holiday</td>
-                        <td>Monday, November 24</td>
-                    </tr>
-                    <tr>
-                        <td><strong>15</strong></td>
-                        <td>Final project Preparation</td>
-                        <td>Monday, December 01</td>
-                    </tr>
-                    <tr>
-                        <td><strong>16</strong></td>
-                        <td><strong>Final Project Presentations</strong></td>
-                        <td><strong>Monday, December 08</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Textbooks Tab -->
-        <div id="textbooks" class="tab-content">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Required Textbooks</h2>
-            
-            <div class="alert info">
-                <strong>First Day® Program:</strong> This course uses an inclusive access model with discounted digital materials available through D2L/Brightspace. Materials are billed as a separate course charge. You can opt-out, but it's not recommended as these materials are required.
-            </div>
-
-            <div class="textbooks">
-                <div class="textbook-card">
-                    <div class="textbook-title">Web Services, Service-Oriented Architectures, and Cloud Computing</div>
-                    <div class="textbook-details">
-                        <strong>Author:</strong> Barry, Douglas K.<br>
-                        <strong>Edition:</strong> 2ND 13<br>
-                        <strong>Publisher:</strong> ELSEVIER<br>
-                        <strong>ISBN:</strong> 9780123983572
-                    </div>
-                </div>
-
-                <div class="textbook-card">
-                    <div class="textbook-title">Introduction to Information Systems</div>
-                    <div class="textbook-details">
-                        <strong>Author:</strong> Rainer<br>
-                        <strong>Edition:</strong> 8TH 20<br>
-                        <strong>Publisher:</strong> WILEY CONS<br>
-                        <strong>ISBN:</strong> 8220115779789
-                    </div>
-                </div>
-            </div>
-
-            <div class="alert">
-                <strong>Important:</strong> The materials are NOT included in tuition. First Day fees can be covered by financial aid before disbursement begins on September 12, 2025.
-            </div>
-        </div>
-
-        <!-- Grading Tab -->
-        <div id="grading" class="tab-content">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Grading System</h2>
-            
-            <div class="grade-scale">
-                <div class="grade-item">
-                    <div class="grade-letter">A</div>
-                    <div class="grade-range">93-100%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">A-</div>
-                    <div class="grade-range">90-92%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">B+</div>
-                    <div class="grade-range">87-89%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">B</div>
-                    <div class="grade-range">83-86%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">B-</div>
-                    <div class="grade-range">80-82%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">C+</div>
-                    <div class="grade-range">77-79%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">C</div>
-                    <div class="grade-range">73-76%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">C-</div>
-                    <div class="grade-range">70-72%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">D+</div>
-                    <div class="grade-range">67-69%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">D</div>
-                    <div class="grade-range">63-66%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">D-</div>
-                    <div class="grade-range">60-62%</div>
-                </div>
-                <div class="grade-item">
-                    <div class="grade-letter">F</div>
-                    <div class="grade-range">0-59%</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Policies Tab -->
-        <div id="policies" class="tab-content">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Course Policies</h2>
-            
-            <div class="policy-section">
-                <h3>Late Assignment Policy</h3>
-                <div class="alert">
-                    <strong>Important:</strong> Late work causes delays for everyone and will only be accepted under limited circumstances.
-                </div>
+                <h3>🏆 Final Project (40 points)</h3>
+                <p>Individual or group project focused on implementing Web Services and SOA. Includes PowerPoint presentation with voice recording.</p>
                 <ul>
-                    <li><strong>On-Time is On-Time:</strong> Work must be submitted by the deadline through D2L</li>
-                    <li><strong>Late Without Approval:</strong> Assignment receives a zero (0)</li>
-                    <li><strong>Extension Requests:</strong> Contact instructor 24+ hours before due date</li>
-                    <li><strong>Approved Late Work:</strong> May be submitted within 48 hours but loses 20% of points</li>
-                    <li><strong>Beyond 48 Hours:</strong> Not accepted, receives zero</li>
+                    <li>Visual Documentation: 25%</li>
+                    <li>Technical Depth: 25%</li>
+                    <li>Presentation Skills: 25%</li>
+                    <li>Participation & Timeliness: 25%</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="policy-section">
-                <h3>Academic Integrity</h3>
-                <p>The University does not accept plagiarism or unauthorized collaboration. Consequences may include assignment failure.</p>
+            <section id="schedule" class="section">
+                <h2>📅 Course Schedule</h2>
+                
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 1</span>
+                        <span class="due-date">Due: Monday, Jan 19 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Syllabus</p>
+                        <p><strong>✅ Assignment:</strong> Quiz 1</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 2</span>
+                        <span class="due-date">Monday, Jan 26</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Understanding Information and Distributed Systems</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 3</span>
+                        <span class="due-date">Monday, Feb 02</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Understanding Distributed Architecture Challenges</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 4</span>
+                        <span class="due-date">Monday, Feb 09</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Understanding Trends in Distributed Systems Architecture</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 5</span>
+                        <span class="due-date">Due: Monday, Feb 16 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Artificial Intelligence in Business Applications and Implications</p>
+                        <p><strong>✅ Assignment:</strong> Quiz 2</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 6</span>
+                        <span class="due-date">Due: Monday, Feb 23 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>✅ Assignment:</strong> Case Study Presentations</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 7</span>
+                        <span class="due-date">Monday, Mar 02</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 1 & 2 (Web Services and SOA)</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 8</span>
+                        <span class="due-date">Monday, Mar 09</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 3 & 4 (Web Services and SOA)</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 9</span>
+                        <span class="due-date">Due: Monday, Mar 16 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 5 & 6 (Web Services and SOA)</p>
+                        <p><strong>✅ Assignment:</strong> Quiz 3</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 10</span>
+                        <span class="due-date">Monday, Mar 23</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 7 & 8 (Web Services and SOA)</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 11</span>
+                        <span class="due-date">Due: Monday, Mar 30 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 9 & 10 (Web Services and SOA)</p>
+                        <p><strong>✅ Assignment:</strong> Quiz 4</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 12</span>
+                        <span class="due-date">Due: Monday, Apr 06 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 11 & 12 (Web Services and SOA)</p>
+                        <p><strong>✅ Assignment:</strong> Quiz 5</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 13</span>
+                        <span class="due-date">Monday, Apr 13</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>📖 Readings:</strong> Chapters 13 & 14 (Web Services and SOA)</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 14</span>
+                        <span class="due-date">Due: Monday, Apr 20 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>✅ Assignment:</strong> Quiz 6</p>
+                    </div>
+                </div>
+
+                <div class="schedule-week">
+                    <div class="week-header">
+                        <span class="week-number">Week 15</span>
+                        <span class="due-date">Due: Monday, Apr 27 by 11:59 pm</span>
+                    </div>
+                    <div class="week-content">
+                        <p><strong>✅ Assignment:</strong> Final Project Presentations</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="policies" class="section">
+                <h2>📋 Course Policies</h2>
+                
+                <h3>⏰ Late Policy</h3>
+                <div class="highlight-box">
+                    <p><strong>Important:</strong> Late work causes delays for everyone and will only be accepted under limited circumstances:</p>
+                    <ul>
+                        <li><strong>On-Time is On-Time:</strong> Submit by deadline through D2L. Technology issues are not an excuse.</li>
+                        <li><strong>Without Approval:</strong> Missed deadlines without prior approval = zero (0) grade.</li>
+                        <li><strong>Need Extension?</strong> Contact instructor at least 24 hours before due date with valid reason. Documentation may be required.</li>
+                        <li><strong>Approved Late Work:</strong> May be submitted within 48 hours but loses 20% of total points unless documented emergency.</li>
+                        <li><strong>Beyond 48 Hours:</strong> Work will not be accepted and receives a zero.</li>
+                    </ul>
+                </div>
+
+                <h3>🎓 Academic Integrity</h3>
+                <p>The University does not accept plagiarism or collusion with other students unless permitted by instructor (e.g., group projects).</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Plagiarism Policy:</strong></p>
+                    <ul>
+                        <li><strong>First Offense:</strong> One-time opportunity to redo assignment with up to 50% point reduction.</li>
+                        <li><strong>Second Offense:</strong> Assignment receives zero (0) grade.</li>
+                        <li><strong>Repeated Plagiarism:</strong> Course failure will result.</li>
+                    </ul>
+                </div>
+
+                <h3>🤖 Generative AI Policy</h3>
+                <p>Generative AI tools (e.g., ChatGPT) may be used for any assignment with <strong>appropriate citation</strong>. Students are responsible for:</p>
                 <ul>
-                    <li>First plagiarism offense: One-time redo opportunity with up to 50% point reduction</li>
-                    <li>Repeated plagiarism: Zero grade on assignment</li>
-                    <li>Multiple violations: Course failure</li>
+                    <li>Fact-checking AI-generated statements</li>
+                    <li>Evaluating validity of cited sources</li>
+                    <li>Understanding that AI works better for some tasks than others</li>
                 </ul>
-            </div>
 
-            <div class="policy-section">
-                <h3>Generative AI Policy</h3>
-                <p>Generative AI tools (ChatGPT, etc.) may be used with appropriate citation. Students are responsible for fact-checking AI-generated content and evaluating source validity.</p>
-            </div>
+                <h3>👥 Attendance</h3>
+                <p>This is an online, asynchronous course that is <strong>not self-paced</strong>. Attendance is tracked by completion of assignments by stated due dates. If you don't complete work in the first two weeks, you will be automatically dropped.</p>
 
-            <div class="policy-section">
-                <h3>Attendance</h3>
-                <p>This is an online, asynchronous course tracked by assignment completion. Federal Financial Aid regulations require attendance monitoring. Students who don't attend the first two classes are automatically dropped.</p>
-            </div>
+                <h3>♿ Accessibility</h3>
+                <p>Students requesting accommodations must register with Disability Services at (651) 793-1549 as early as possible.</p>
+            </section>
 
-            <div class="alert info">
-                <strong>Student Resources:</strong> Metro State provides free counseling services, career services, writing center assistance, library services, and accessibility accommodations. Contact information is available in the full syllabus.
-            </div>
+            <section id="resources" class="section">
+                <h2>🔧 Student Resources</h2>
+                
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <h3>💻 Computer Centers</h3>
+                        <p><strong>Minneapolis:</strong> 612-659-7245</p>
+                        <p><strong>St. Paul:</strong> 651-793-1245</p>
+                        <p><strong>Midway:</strong> 651-999-5845</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>🌐 Online Learning</h3>
+                        <p>D2L support issues:</p>
+                        <p>online.learning@metrostate.edu</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>🖥️ IT Help Desk</h3>
+                        <p><strong>Email:</strong> IT.DESK@Metrostate.edu</p>
+                        <p><strong>Phone:</strong> 651-793-1240</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>✍️ Writing Center</h3>
+                        <p><strong>Phone:</strong> 651-793-1460</p>
+                        <p><strong>Email:</strong> centerfolk@metrostate.edu</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>📚 Library Services</h3>
+                        <p><strong>Phone:</strong> 651-793-1616</p>
+                        <p>Available at all campus locations</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>🧑‍🦽 Disability Services</h3>
+                        <p><strong>Phone:</strong> 651-793-1549</p>
+                        <p><strong>TTY:</strong> 651-772-7723</p>
+                        <p><strong>Email:</strong> disability.services@metrostate.edu</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>💼 Career Services</h3>
+                        <p>FREE career counseling and workshops</p>
+                        <p>Job postings and alumni network</p>
+                        <p>Visit the Career Services website</p>
+                    </div>
+
+                    <div class="objective-card">
+                        <h3>🧠 Student Counseling</h3>
+                        <p><strong>Phone:</strong> 651-793-1558</p>
+                        <p>Free, confidential counseling for stress management, test anxiety, and personal issues</p>
+                    </div>
+                </div>
+
+                <h3>📧 Communication Tips</h3>
+                <div class="highlight-box">
+                    <p><strong>Email Best Practices:</strong></p>
+                    <ul>
+                        <li>Use your Metro State email account to avoid spam filters</li>
+                        <li>Include course name (MIS-462) in the subject line</li>
+                        <li>Expect responses within 48 hours</li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </div>
 
     <script>
-        function showTab(tabName) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(tab => {
-                tab.classList.remove('active');
-            });
+        // Get all navigation buttons and sections
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.section');
 
-            // Remove active class from all buttons
-            const tabButtons = document.querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
-
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-
-        // Add some interactive effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effects to cards
-            const cards = document.querySelectorAll('.assignment-card, .textbook-card, .grade-item');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.02)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Add click effects to learning objectives
-            const objectives = document.querySelectorAll('.learning-objectives li');
-            objectives.forEach(objective => {
-                objective.addEventListener('click', function() {
-                    this.style.background = 'linear-gradient(145deg, #e8f4fd, #d1ecf1)';
-                    this.style.borderLeftColor = '#2980b9';
-                    setTimeout(() => {
-                        this.style.background = 'linear-gradient(145deg, #ffffff, #f8f9fa)';
-                        this.style.borderLeftColor = '#667eea';
-                    }, 1500);
-                });
-            });
-
-            // Add progress animation to grade scale
-            const gradeItems = document.querySelectorAll('.grade-item');
-            gradeItems.forEach((item, index) => {
-                item.style.animationDelay = `${index * 0.1}s`;
-                item.style.animation = 'slideInUp 0.6s ease-out forwards';
-            });
-
-            // Add typing effect to course title (just for fun)
-            const title = document.querySelector('.header h1');
-            const originalText = title.textContent;
-            title.textContent = '';
-            let i = 0;
-            
-            function typeWriter() {
-                if (i < originalText.length) {
-                    title.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
+        // Add click event to each button
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the section to show
+                const sectionId = this.getAttribute('data-section');
+                
+                // Remove active class from all buttons
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Show the selected section
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
                 }
-            }
-            
-            setTimeout(typeWriter, 500);
+            });
         });
-
-        // Add CSS animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-                100% { transform: scale(1); }
-            }
-            
-            .assignment-card:hover .assignment-points {
-                animation: pulse 0.6s ease-in-out;
-            }
-            
-            .due-date {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .due-date::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                transition: left 0.5s;
-            }
-            
-            .due-date:hover::before {
-                left: 100%;
-            }
-            
-            .schedule-table tbody tr {
-                transition: all 0.3s ease;
-            }
-            
-            .schedule-table tbody tr:hover {
-                transform: translateX(5px);
-                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
